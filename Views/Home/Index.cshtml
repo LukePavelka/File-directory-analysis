@@ -1,0 +1,268 @@
+﻿@model PUXdesign.Models.RequestAndReportSingle
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>*@
+
+<h4>File directory analysis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Request.Path" class="control-label">Write the full path to the directory.</label>
+                <input asp-for="Request.Path" class="form-control" />
+                <span asp-validation-for="Request.Path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send request" name="submit" class="btn btn-primary" />
+                <input type="submit" value="Clear" name="submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model != null && Model.Report.Added != null && Model.Report.Added.Count != 0 && Model.Report.CheckForDataFile(Model.Report.Added) == true && Model.Report.CheckForSameReq(Model.Report.Added, Model) == true)
+{
+    <h2>Added data file</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Version")
+                </th>
+                <th>
+                    @Html.DisplayName("MD5 Hash")
+                </th>
+                <th>
+                    @Html.DisplayName("Full Path")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Report.Added)
+            {
+                @if (item.Type == PUXdesign.Analysis.DataType.DataFile && item.RequiredPath == Model.Request.Path)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ActualVersion.identification)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ActualVersion.HashMD5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullPath)
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model != null && Model.Report.Added != null && Model.Report.Added.Count != 0 && Model.Report.CheckForFolder(Model.Report.Added) == true && Model.Report.CheckForSameReq(Model.Report.Added, Model) == true)
+{
+    <h2>Added folders</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Full Path")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Report.Added)
+            {
+                @if (item.Type == PUXdesign.Analysis.DataType.Folder && item.RequiredPath == Model.Request.Path)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model != null && Model.Report.Changed != null && Model.Report.Changed.Count != 0 && Model.Report.CheckForDataFile(Model.Report.Changed) == true && Model.Report.CheckForSameReq(Model.Report.Changed, Model) == true)
+{
+    <h2>Changed data file</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Version")
+                </th>
+                <th>
+                    @Html.DisplayName("MD5 Hash")
+                </th>
+                <th>
+                    @Html.DisplayName("Full Path")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Report.Changed)
+            {
+                @if (item.Type == PUXdesign.Analysis.DataType.DataFile && item.RequiredPath == Model.Request.Path)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualVersion.identification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualVersion.HashMD5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+                <td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model != null && Model.Report.Changed != null && Model.Report.Changed.Count != 0 && Model.Report.CheckForFolder(Model.Report.Changed) == true && Model.Report.CheckForSameReq(Model.Report.Changed, Model) == true)
+{
+    <h2>Changed folders</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Full Path")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Report.Changed)
+            {
+                @if (item.Type == PUXdesign.Analysis.DataType.Folder && item.RequiredPath == Model.Request.Path)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model != null && Model.Report.Removed != null && Model.Report.Removed.Count != 0 && Model.Report.CheckForDataFile(Model.Report.Removed) == true && Model.Report.CheckForSameReq(Model.Report.Removed, Model) == true)
+{
+    <h2>Removed data files</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Version")
+                </th>
+                <th>
+                    @Html.DisplayName("MD5 Hash")
+                </th>
+                <th>
+                    @Html.DisplayName("Full Path")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Report.Removed)
+            {
+                @if (item.Type == PUXdesign.Analysis.DataType.DataFile && item.RequiredPath == Model.Request.Path)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualVersion.identification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualVersion.HashMD5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+                <td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@if (Model != null && Model.Report.Removed != null && Model.Report.Removed.Count != 0 && Model.Report.CheckForFolder(Model.Report.Removed) == true && Model.Report.CheckForSameReq(Model.Report.Removed, Model) == true)
+{
+    <h2>Removed folders</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Full Path")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Report.Removed)
+            {
+                @if (item.Type == PUXdesign.Analysis.DataType.Folder && item.RequiredPath == Model.Request.Path)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
