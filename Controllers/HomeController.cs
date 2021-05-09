@@ -34,10 +34,19 @@ namespace PUXdesign.Controllers
             else if (submit == "Send request")
             {
                 var FileAnalyzer = new FileAnalyzer(RequestAnalyze.Request.Path);
-                FileAnalyzer.Run();
-                ReportFilesAnalyzer ReportFiles = FileAnalyzer.GetResult();
-                RequestAnalyze.Report = ReportFiles;
-                return View(RequestAnalyze);
+                if (FileAnalyzer.IsPathValid)
+                {
+                    FileAnalyzer.Run();
+                    ReportFilesAnalyzer ReportFiles = FileAnalyzer.GetResult();
+                    RequestAnalyze.Report = ReportFiles;
+                    return View(RequestAnalyze);
+                }
+                else
+                {
+                    RequestAnalyze.Request.PathNotValid = true;
+                    RequestAnalyze.Report = null;
+                    return View(RequestAnalyze);
+                }
             }
             return View();
         }

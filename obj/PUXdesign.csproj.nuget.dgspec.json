@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukky\\source\\repos\\PUXdesign\\PUXdesign.csproj": {}
+    "C:\\Users\\lukky\\Source\\Repos\\File-directory-analysis\\PUXdesign.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukky\\source\\repos\\PUXdesign\\PUXdesign.csproj": {
+    "C:\\Users\\lukky\\Source\\Repos\\File-directory-analysis\\PUXdesign.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukky\\source\\repos\\PUXdesign\\PUXdesign.csproj",
+        "projectUniqueName": "C:\\Users\\lukky\\Source\\Repos\\File-directory-analysis\\PUXdesign.csproj",
         "projectName": "PUXdesign",
-        "projectPath": "C:\\Users\\lukky\\source\\repos\\PUXdesign\\PUXdesign.csproj",
+        "projectPath": "C:\\Users\\lukky\\Source\\Repos\\File-directory-analysis\\PUXdesign.csproj",
         "packagesPath": "C:\\Users\\lukky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukky\\source\\repos\\PUXdesign\\obj\\",
+        "outputPath": "C:\\Users\\lukky\\Source\\Repos\\File-directory-analysis\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BNyqhCVt6GxmO94pDP2QYdIUMAK4CswRzoE1LEfNErKEUwwNUVwDY87JOe+RO3ee4iwPwY3ji+t0jcwqQBLpBQ==",
+  "dgSpecHash": "C5xBWnMEZAVo4zJfu9zy1PTXVv0XMLfOyAj05Brnhq2ttQCInIyfFLjkWzvWq8txpJ9Pzo5gHa4ocWznJOo0/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukky\\source\\repos\\PUXdesign\\PUXdesign.csproj",
+  "projectFilePath": "C:\\Users\\lukky\\Source\\Repos\\File-directory-analysis\\PUXdesign.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukky\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\lukky\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

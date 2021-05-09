@@ -8,5 +8,6 @@ namespace PUXdesign.Models
     public class RequestFilesAnalyze
     {
         public string Path { get; set; }
-    }
+        public bool PathNotValid { get; set; }
+}
 }

@@ -16,9 +16,23 @@ namespace PUXdesign.Analysis
         public List<Files> Added { get; set; }
         public List<Files> Changed { get; set; }
         public List<Files> Removed { get; set; }
+        public bool IsPathValid { get; set; }
         public FileAnalyzer(string RequiredPath)
         {
             this.RequiredPath = RequiredPath;
+            this.PathTest();
+        }
+
+        private void PathTest()
+        {
+            if (Directory.Exists(RequiredPath))
+            {
+                IsPathValid = true;
+            }
+            else
+            {
+                IsPathValid = false;
+            }
         }
 
         public void Run() 
