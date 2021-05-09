@@ -120,7 +120,6 @@ C:\Users\lukky\source\repos\PUXdesign\obj\Debug\net5.0\Razor\Views\Home\Index.cs
 C:\Users\lukky\source\repos\PUXdesign\bin\Debug\net5.0\FileAnalysis.json
 C:\Users\lukky\Source\Repos\File-directory-analysis\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\lukky\Source\Repos\File-directory-analysis\bin\Debug\net5.0\appsettings.json
-C:\Users\lukky\Source\Repos\File-directory-analysis\bin\Debug\net5.0\FileAnalysis.json
 C:\Users\lukky\Source\Repos\File-directory-analysis\bin\Debug\net5.0\PUXdesign.exe
 C:\Users\lukky\Source\Repos\File-directory-analysis\bin\Debug\net5.0\PUXdesign.deps.json
 C:\Users\lukky\Source\Repos\File-directory-analysis\bin\Debug\net5.0\PUXdesign.runtimeconfig.json
